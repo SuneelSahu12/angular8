@@ -1,0 +1,56 @@
+
+<!-- <div class="content" role="main">
+   <div class="container">
+    <h3 class="d-flex justify-content-center"> Angular 8 with web API Demo</h3>
+    <h5 class="d-flex justify-content-center"> Employee Mangament Portal</h5>    
+    <nav class="navbar navbar-expand-sm bg-light navbark-dark" >     
+      <ul class="navbar-nav">
+        <li class="nav-item">       
+          <button class="mt-2" mat-raised-button (click)="EmpScreen=false; DepScreen=true;" 
+          Button label="DepScreen" color="primary">
+          Department
+          </button>
+        </li>
+        <li class="nav-item">
+     
+          <button class="mt-2" mat-raised-button (click)="EmpScreen=true; DepScreen=false;" 
+          Button label="EmpScreen" color="blue">
+          Employee
+          </button>
+        </li>
+      </ul>
+    </nav>
+  <app-employee *ngIf="EmpScreen" ></app-employee> 
+   <app-department *ngIf="DepScreen"></app-department>
+  </div>
+  
+  <footer>
+  </footer>
+</div> -->
+<div class="content" role="main">
+  <div class="container">
+   <h3 class="d-flex justify-content-center"> Angular 8 with web API Demo</h3>
+   <h5 class="d-flex justify-content-center"> Employee Mangament Portal</h5>    
+   <nav class="navbar navbar-expand-sm bg-light navbark-dark" >     
+     <ul class="navbar-nav">
+       <li class="nav-item">       
+         <button routerLink="department" class="mt-2" mat-raised-button 
+         Button label="DepScreen" color="primary">
+         Department
+         </button>
+       </li>
+       <li class="nav-item">
+    
+         <button routerLink="employee" class="mt-2" mat-raised-button  
+         Button label="EmpScreen" color="blue">
+         Employee
+         </button>
+       </li>
+     </ul>
+   </nav>
+ </div>
+ 
+ <footer>
+ </footer>
+</div>
+<router-outlet></router-outlet>
