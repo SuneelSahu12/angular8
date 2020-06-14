@@ -13,8 +13,8 @@ export class DepartmentService {
 
   formData: Department;
 
-  //readonly APIUrl = "http://localhost/WebAPI/api";
-  readonly APIUrl = "https://localhost:44350/api";
+  readonly APIUrl = "http://localhost/WebAPI/api";
+ // readonly APIUrl = "https://localhost:44350/api";
 
   getDepList() : Observable<Department[]> {
     return this.http.get<Department[]>(this.APIUrl + '/Department');
