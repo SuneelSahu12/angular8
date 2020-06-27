@@ -23,7 +23,8 @@ import { ShowDepComponent } from './department/show-dep/show-dep.component';
 import { EditDepComponent } from './department/edit-dep/edit-dep.component';
 import { AddDepComponent } from './department/add-dep/add-dep.component';
 import { DepartmentService } from 'src/app/services/department.service';
-import { EmployeeService } from 'src/app/services/employee.service'
+import { EmployeeService } from 'src/app/services/employee.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { EmployeeService } from 'src/app/services/employee.service'
     MatSnackBarModule,
     MatSortModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    NgbModule.forRoot()
   ],
   providers: [DepartmentService,EmployeeService],
   bootstrap: [AppComponent],

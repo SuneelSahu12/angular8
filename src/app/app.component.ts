@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Hello Suneel Rudra Sahu';
   EmpScreen: boolean=false;
-  DepScreen: boolean=true;
+  DepScreen: boolean=true; 
   
 }
