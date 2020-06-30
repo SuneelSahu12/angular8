@@ -1,4 +1,5 @@
 
+
 <mat-table [dataSource]="listData" class="mat-elevation-z8" matSort>
     <!-- Position Column -->
     <ng-container matColumnDef="Options">
@@ -31,4 +32,9 @@
 
   <button class="mt-2" mat-raised-button (click)="onAdd()" color="primary">
     Add Deparment
+  </button>
+  <!-- <h2>{{name}}</h2>   -->
+  <h3>{{errorMsg}}</h3>
+  <button (click)="fireEvent()">
+    Send Event
   </button>

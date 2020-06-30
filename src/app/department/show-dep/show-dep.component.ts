@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Department } from 'src/app/models/department-model';
 import { DepartmentService } from 'src/app/services/department.service';
@@ -43,7 +43,9 @@ export class ShowDepComponent implements OnInit {
    listData = new MatTableDataSource<any>();
   // displayedColumns : string[] = ['Option', 'DepartmentID', 'DepartmentOptions'];
 @ViewChild(MatSort,{ static: false}) sort:MatSort;
-
+@Input('parentData') public name;
+@Output() public childEvent = new EventEmitter();
+public errorMsg: any;
   ngOnInit(): void {
     this.refreshDepList();
   }
@@ -52,8 +54,9 @@ export class ShowDepComponent implements OnInit {
     {
       this.service.getDepList().subscribe(data => {
         this.listData = new MatTableDataSource(data);
-        this.listData.sort = this.sort;
-      });
+        this.listData.sort = this.sort; }
+        ,error => this.errorMsg
+        );
       // var dummyData =  [
       //     { Options: 1, DepartmentID: 1, DepartmentName: 'IT'},
       //      { Options: 2, DepartmentID: 2, DepartmentName: 'Finance'}
@@ -83,5 +86,8 @@ export class ShowDepComponent implements OnInit {
       dialogconfig.autoFocus = true;
       dialogconfig.width = "70%";
       this.dialog.open(AddDepComponent,dialogconfig);
+    }
+    fireEvent(){
+      this.childEvent.emit('Hi From Child to Parent');
     }
 }

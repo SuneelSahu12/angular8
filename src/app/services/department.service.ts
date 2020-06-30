@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient, HttpErrorResponse} from '@angular/common/http'
 import { Department } from 'src/app/models/department-model'
 import {  Observable, Subject } from 'rxjs';
-
+import {  throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({ 
   providedIn: 'root'
@@ -12,12 +13,14 @@ export class DepartmentService {
   constructor(private http:HttpClient) { }
 
   formData: Department;
+  public errormsg;
 
   readonly APIUrl = "http://localhost/WebAPI/api";
  // readonly APIUrl = "https://localhost:44350/api";
 
   getDepList() : Observable<Department[]> {
     return this.http.get<Department[]>(this.APIUrl + '/Department');
+    //.pipe(catchError(this.errorHandle));
   }
 
   addDeparment(dep:Department){
@@ -41,6 +44,11 @@ export class DepartmentService {
     filter(filterBy: string){
       this._listners.next(filterBy);
     }
-  
+ 
+    errorHandle(error: HttpErrorResponse)
+    {
+      return Observable.throw(error.message || "Server Error");
+      
+    }
 
 }

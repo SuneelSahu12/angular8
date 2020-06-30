@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./department.component.css']
 })
 export class DepartmentComponent implements OnInit {
-
+  public name = "Suneel from Parent";
+  public message='';
   constructor() { }
  
 

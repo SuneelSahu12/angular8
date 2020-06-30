@@ -23,7 +23,8 @@ import { ShowDepComponent } from './department/show-dep/show-dep.component';
 import { EditDepComponent } from './department/edit-dep/edit-dep.component';
 import { AddDepComponent } from './department/add-dep/add-dep.component';
 import { DepartmentService } from 'src/app/services/department.service';
-import { EmployeeService } from 'src/app/services/employee.service'
+import { EmployeeService } from 'src/app/services/employee.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { EmployeeService } from 'src/app/services/employee.service'
     DepartmentComponent,
     ShowDepComponent,
     EditDepComponent,
-    AddDepComponent   
+    AddDepComponent,
+    PageNotFoundComponent   
   ],
   imports: [
     BrowserModule,

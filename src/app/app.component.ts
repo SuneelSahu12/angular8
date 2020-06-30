@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Hello Suneel Rudra Sahu';
+  public hasError = false;
   EmpScreen: boolean=false;
   DepScreen: boolean=true;
-  
+ 
 }
